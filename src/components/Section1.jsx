@@ -11,7 +11,7 @@ function Section1(props) {
     <>
       <div id="grid" className="grid">
         <div className="column-3 column-A column-A-js">
-          <h2>Om mig</h2>
+          <h2>About Me</h2>
           {contactForm.name}
           <p>
             sit amet consectetur adipisicing elit. Magnam voluptatibus nam optio
@@ -30,20 +30,20 @@ function Section1(props) {
             className="primary-button"
             href="Kontaktformulär.html"
           >
-            Kontakt
-          </a>
-          <a target="self" className="primary-button" href="Bokning.html">
-            Om mig
+            Contact
           </a>
           <a target="self" className="primary-button" href="">
-            Kunskap
+            About Me
+          </a>
+          <a target="self" className="primary-button" href="">
+            Knowledge
           </a>
           <a
             target="self"
             className="primary-button"
             href="https://github.com/johannafalkenmark"
           >
-            Portfölj
+            Portfolio
           </a>
           <a
             target="self"
@@ -53,7 +53,7 @@ function Section1(props) {
             CV
           </a>
           <a target="self" className="primary-button" href="">
-            Referens
+            Reference (Upon Request)
           </a>
         </div>
 
@@ -110,6 +110,7 @@ function Section1(props) {
                   });
                 }}
               />
+              <button className="submit-button-contactform">Submit</button>
             </div>
           </p>
         </div>

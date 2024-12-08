@@ -7,7 +7,7 @@ return (
     <div className="hero-text">
       <h1>Johanna Falkenmark</h1>
       <p></p>
-      <button className="hero-button">Kontakt</button>
+      <button className="hero-button">Contact</button>
       <a href="#grid" className="hero-scroll-btn">
         <svg
           className="hero-chevron"

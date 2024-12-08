@@ -101,6 +101,7 @@ h2 {
   & a {
     text-decoration: none;
   }
+  text-decoration: none;
 }
 
 .header-icon {
@@ -266,6 +267,32 @@ border-radius: 2px;
 .input-contactform.textarea{
   height: 80px;
 }
+
+.submit-button-contactform{
+    background-color: var(--beige-box-color1);
+  box-shadow: var(--standard-box-shadow);
+  text-decoration: none;
+  border-radius: 30px;
+  width: 100px;
+  padding: 8px;
+  border: 4px;
+  font-size: 12px;
+  color: rgb(33, 33, 33);
+  font-family: var(--standard-font);
+  font-weight: 500;
+  margin-top: 8px;
+  margin: 0 auto;
+
+  &:hover {
+    background-color: var(--green-box-color5);
+    color: var(--green-box-color1);
+  }
+  &:active {
+    background-color: transparent;
+    color: white;
+  }
+}
+
 
 .span {
   color: var(--beige-box-color1);

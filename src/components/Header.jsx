@@ -47,16 +47,16 @@ function Header(props) {
           <nav className="header-menu">
             <ul className="header-menu-list">
               <li>
-                <a href="">Om mig</a>
+                <a href="">About Me</a>
               </li>
               <li>
-                <a href="">Kunskap</a>
+                <a href="">Knowledge</a>
               </li>
               <li>
-                <a href="">Erfarenhet</a>
+                <a href="">Experience</a>
               </li>
               <li>
-                <a href="">Kontakt</a>
+                <a href="">Contact</a>
               </li>
             </ul>
           </nav>
