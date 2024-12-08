@@ -55,7 +55,6 @@ function Contactform() {
               placeholder="Type your message"
               required
             />
-        
           </div>
         </form>
       </body>
