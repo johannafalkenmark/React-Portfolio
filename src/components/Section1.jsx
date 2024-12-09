@@ -1,18 +1,84 @@
 import { useState } from "react";
 
 function Section1(props) {
+  /*POP UP:*/
+  const [isPopupVisible, setIsPopupVisible] = useState(false);
+
+  const togglePopup = () => {
+    setIsPopupVisible(!isPopupVisible);
+  };
+
+  function Popup({ onClose, children }) {
+    return (
+      <div className="popup-overlay" onClick={onClose}>
+        <div className="popup-content" onClick={(e) => e.stopPropagation()}>
+          <button className="close-popup-button" onClick={onClose}>
+            ×
+          </button>
+          {children}
+        </div>
+      </div>
+    );
+  }
+
+  //CONTACTFORM
   const [contactForm, setContactForm] = useState({
     email: "",
     name: "",
     message: "",
   });
 
+  const [errors, setErrors] = useState({});
+  const [submitting, setSubmitting] = useState(false);
+
+  const validateValues = (inputValues) => {
+    let errors = {};
+
+    if (!inputValues.email) {
+      errors.email = "Email is required";
+    } else if (inputValues.email.length < 5) {
+      errors.email = "Email is too short";
+    } else if (!/\S+@\S+\.\S+/.test(inputValues.email)) {
+      errors.email = "Email is invalid";
+    }
+
+    if (!inputValues.name) {
+      errors.name = "Name is required";
+    } else if (inputValues.name.length < 2) {
+      errors.name = "Name is too short";
+    }
+
+    if (!inputValues.message) {
+      errors.message = "Message is empty";
+    } else if (inputValues.message.length < 2) {
+      errors.message = "Message is too short";
+    }
+
+    return errors;
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const validationErrors = validateValues(contactForm);
+    setErrors(validationErrors);
+    if (Object.keys(validationErrors).length === 0) {
+      setSubmitting(true);
+      setTimeout(() => {
+        alert("Thank you for your message");
+        setSubmitting(false);
+        setContactForm({ email: "", name: "", message: "" });
+      }, 1000);
+    } else {
+      setSubmitting(false);
+    }
+  };
+
   return (
     <>
       <div id="grid" className="grid">
         <div className="column-3 column-A column-A-js">
           <h2>About Me</h2>
-          {contactForm.name}
+
           <p>
             sit amet consectetur adipisicing elit. Magnam voluptatibus nam optio
             vitae fugit ea, aliquid inventore reprehenderit repellat libero
@@ -26,9 +92,12 @@ function Section1(props) {
         </div>
         <div className="column-3 column-B">
           <a
-            target="self"
             className="primary-button"
-            href="Kontaktformulär.html"
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              togglePopup();
+            }}
           >
             Contact
           </a>
@@ -67,51 +136,75 @@ function Section1(props) {
 
         <div className="column-3 column-D">
           <p>
-            <h2>Contact</h2>
-            <div className="contact-form">
-              <div>
-                <label for="Name">Name</label>
-              </div>
-              <input
-                className="input-contactform"
-                placeholder="Type your name..."
-                type="text"
-                value={contactForm.name}
-                onChange={(event) => {
-                  setContactForm({ ...contactForm, name: event.target.value });
-                }}
-              />
+            {isPopupVisible && (
+              <Popup onClose={togglePopup}>
+                <form
+                  className="contact-form"
+                  onSubmit={handleSubmit}
+                  noValidate
+                >
+                  <h2>Contact</h2>
+                  <div>
+                    <label for="Name">Name</label>
+                  </div>
+                  <input
+                    className="input-contactform"
+                    placeholder="Type your name..."
+                    type="text"
+                    value={contactForm.name}
+                    onChange={(event) =>
+                      setContactForm({
+                        ...contactForm,
+                        name: event.target.value,
+                      })
+                    }
+                  />
+                  {errors.name && <p className="error">{errors.name}</p>}
 
-              <div>
-                <label for="Email">Email</label>
-              </div>
-              <input
-                className="input-contactform"
-                placeholder="Type your email..."
-                type="text"
-                value={contactForm.email}
-                onChange={(event) => {
-                  setContactForm({ ...contactForm, email: event.target.value });
-                }}
-              />
+                  <div>
+                    <label for="Email">Email</label>
+                  </div>
+                  <input
+                    className="input-contactform"
+                    placeholder="Type your email..."
+                    type="text"
+                    value={contactForm.email}
+                    onChange={(event) =>
+                      setContactForm({
+                        ...contactForm,
+                        email: event.target.value,
+                      })
+                    }
+                  />
+                  {errors.email && <p className="error">{errors.email}</p>}
 
-              <div>
-                <label for="Message">Message</label>
-              </div>
-              <textarea
-                className="input-contactform textarea"
-                placeholder="Message..."
-                type="text"
-                value={contactForm.message}
-                onChange={(event) => {
-                  setContactForm({
-                    ...contactForm,
-                    message: event.target.value,
-                  });
-                }}
-              />
-              <button className="submit-button-contactform">Submit</button>
-            </div>
+                  <div>
+                    <label for="Message">Message</label>
+                  </div>
+                  <textarea
+                    className="input-contactform textarea"
+                    placeholder="Message..."
+                    value={contactForm.message}
+                    onChange={(event) =>
+                      setContactForm({
+                        ...contactForm,
+                        message: event.target.value,
+                      })
+                    }
+                  />
+
+                  {errors.message && <p className="error">{errors.message}</p>}
+
+                  <button
+                    type="submit"
+                    className="submit-button-contactform"
+                    disabled={submitting}
+                  >
+                    {submitting ? "Submitting..." : "Submit"}
+                  </button>
+                </form>
+              </Popup>
+            )}
           </p>
         </div>
       </div>

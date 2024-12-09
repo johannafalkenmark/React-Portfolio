@@ -12,11 +12,17 @@ import Section2 from "./components/Section2";
 import Footer from "./components/Footer";
 
 function App() {
+
+
+  /* PARTY MODE*/
   const [partyMode, togglePartyMode] = useState(false);
 
   const _togglePartyMode = () => {
     togglePartyMode(!partyMode);
   };
+
+
+
 
   return (
     <div className={`${partyMode ? "container container-party" : "container"}`}>
