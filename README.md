@@ -1,15 +1,21 @@
-# React + Vite
+Welcome to my portfolio website,
+This repository contains the source code for my personal portfolio, showcasing my experience, knowledge and option to download my CV. It also includes a contactform.
+The site is built using the web technologies React, HTML, CSS, and JavaScript.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Design
+-Color palette of my choice was picked from
+![Color palette Portfolio](https://github.com/user-attachments/assets/e780fe83-40f4-4b7a-8b4d-3bd103479fd3)
 
-Currently, two official plugins are available:
+Picture of forest was chosen to give a calming atmosphere. It was picked from https://unsplash.com/.
+Fonts from https://fonts.google.com/.
+Icons from https://boxicons.com/ and svg-icons from https://fonts.google.com/icons. 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Technologies Used
+React: For building the interactive user interface.
+HTML5: For semantic and accessible structure.
+CSS3: For styling with modern layouts (CSS Grid, Flexbox).
+JavaScript (ES6+): For dynamic behavior and interactivity.
 
-För att sätta igång miljö
-
-
-npm run dev
-
-Alla script finns i package.json
+Contact
+Johanna Falkenmark johannafalkenmark@gmail.com
+Project Link: https://github.com/johannafalkenmark/React-Portfolio
