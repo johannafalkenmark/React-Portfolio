@@ -49,13 +49,13 @@ function Header(props) {
           <nav className="header-menu">
             <ul className="header-menu-list">
               <li>
-                <a href="">About Me</a>
+                <a href="#grid">About Me</a>
               </li>
               <li>
-                <a href="">Knowledge</a>
+                <a href="#knowledge">Knowledge</a>
               </li>
               <li>
-                <a href="">Experience</a>
+                <a href="#experience">Experience</a>
               </li>
               <li>
                 <a

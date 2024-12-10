@@ -11,17 +11,13 @@ function Section1(props) {
           {" "}
           <div className="textarea">
             I am an IT and HR Project manager who is becoming a{" "}
-            <span className="span">.Net Developer</span> through Nackademin. My
-            intererst in developing grew during my position as a implementation
-            consultant of a HCM system. I have a Bachelors degree in HR
-            Psychology and have worked in different areas within HR, always with
-            a hand in IT and systems. My aim is to combine all of my former and
-            future skills.
+            <span className="span">.Net Developer.</span> My intererst in
+            developing grew during my position as a implementation consultant of
+            a HCM system. I have a Bachelors degree in HR Psychology and have
+            worked in different areas within HR, always with a hand in IT and
+            systems. My aim is to combine all of my former and future skills.
           </div>
         </p>
-        <div className="spray-can-position" onClick={props.togglePartyMode}>
-          <i className="bx bx-spray-can"></i>
-        </div>
       </div>
       <div className="column-3 column-B">
         <a
@@ -34,12 +30,11 @@ function Section1(props) {
         >
           Contact
         </a>
-        <a target="self" className="primary-button" href="">
-          About Me
-        </a>
-        <a target="self" className="primary-button" href="">
+    
+        <a target="self" className="primary-button" href="#knowledge">
           Knowledge
         </a>
+
         <a
           target="self"
           className="primary-button"
@@ -47,6 +42,7 @@ function Section1(props) {
         >
           Portfolio
         </a>
+
         <a
           target="self"
           className="primary-button"
@@ -54,8 +50,8 @@ function Section1(props) {
         >
           CV
         </a>
-        <a target="self" className="primary-button" href="">
-          Reference (Upon Request)
+        <a target="self" className="primary-button" href="#reference">
+          Reference
         </a>
       </div>
 
@@ -68,34 +64,52 @@ function Section1(props) {
       </div>
 
       <div className="column-3 column-D">
-        <div className="links-section1">
-          <h2>Email Me</h2>
-          <a
-            target="self"
-            href="mailto:johannafalkenmark@gmail.com?subject=Contact"
-          >
-            <i className="header-icon bx bx-envelope"></i>
-          </a>
-        </div>
-        <div className="links-section1">
-          <h2>Linkedin</h2>
-          <a
-            target="self"
-            href="mailto:johannafalkenmark@gmail.com?subject=Contact"
-          >
-            <i className="header-icon bx bx-envelope"></i>
-          </a>
-        </div>
-        <div className="links-section1">
-          <h2>
-            {" "}
-            <a href="https://github.com/johannafalkenmark" target="self">
-              GitHub
-            </a>
-          </h2>
-        </div>
+        <ul className="header-menu-list column">
+          <li>
+            <i className="header-icon bx bx-envelope">
+              {" "}
+              <a href="mailto:johannafalkenmark@gmail.com?subject=Contact">
+                Email Me
+              </a>
+            </i>
+          </li>
 
-        <h2>Download CV</h2>
+          <li>
+            <i className="header-icon bx bxl-linkedin">
+              <a
+                target="self"
+                href="https://www.linkedin.com/in/johanna-falkenmark-0425a61b/"
+              >
+                Linkedin
+              </a>
+            </i>
+          </li>
+
+          <li>
+            <i className="header-icon bx bxl-github">
+              <a target="self" href="https://github.com/johannafalkenmark">
+                GitHub
+              </a>
+            </i>
+          </li>
+
+          <li>
+            <i className="header-icon bx bx-chevrons-down">
+              <a
+                href="Arbetslivserfarenhet Kompetens Johanna Falkenmark.pdf"
+                download="JFCV"
+              >
+                Download CV
+              </a>
+            </i>
+          </li>
+        </ul>
+
+        
+
+        <div className="spray-can-position" onClick={props.togglePartyMode}>
+          <i className="bx bx-spray-can"></i>
+        </div>
       </div>
     </div>
   );

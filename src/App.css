@@ -249,20 +249,31 @@ h3 {
   
 }
 
-.links-section1{
-   
-  
-  & a {
-    text-decoration: none;
+.header-menu-list.column{
+  display: flexbox;
+padding: 8px;
+font-size: 18px;
+
+  & li{
+padding: 4px;
   }
+
+  & a{
+    margin-left: 8px;
+  }
+
+& a:hover{
+color: var(--blue-box-color4);
+
+  }
+  & i:hover{
+color: var(--blue-box-color4);
+
+  }
+
 }
 
-.linkedin-me{
-   & a {
-    text-decoration: none;
-  }
-  text-decoration: none;
-}
+
 
 .popup-overlay {
   position: fixed;
@@ -360,8 +371,8 @@ border-radius: 2px;
     margin-right: auto;
 
   &:hover {
-    background-color: var(--green-box-color5);
-    color: var(--green-box-color1);
+    background-color: var(--pink-box-color2);
+    color: var(--pink-box-color1);
   }
   &:active {
     background-color: transparent;
@@ -372,7 +383,6 @@ border-radius: 2px;
 
 .span {
   color: var(--beige-box-color1);
-  font-size: large;
   font-weight: normal;
   font-family: "Poppins";
 }
@@ -410,12 +420,14 @@ border-radius: 2px;
   border-color: var(--blue-box-color4);
 }
 
-.grid-2 {
+.grid-3 {
   padding: 8px;
-  display: flex;
-  justify-content: space-between;
+  display:inline;
+  justify-content: space-around;
   flex-wrap: wrap;
+
 }
+
 
 .box-1 {
   background-color: var(--green-box-color5);
@@ -426,6 +438,13 @@ border-radius: 2px;
   border-width: 8px;
   box-shadow: var(--standard-box-shadow);
   height: calc(25% -4px);
+  
+font-family: var(--standard-font);
+  & ul{
+  list-style: none;
+     
+  
+}
 }
 
 .box-2 {
@@ -437,7 +456,42 @@ border-radius: 2px;
   border-width: 8px;
   box-shadow: var(--standard-box-shadow);
   height: calc(75% -4px);
+  font-family: var(--standard-font);
+
+& ul{
+  list-style: none;
+ 
 }
+}
+.box-3 {
+  background-color: var(--green-box-color5);
+  padding: 20px;
+  margin-bottom: 4px;
+  border-radius: 10px;
+  border-style: inherit;
+  border-width: 8px;
+  box-shadow: var(--standard-box-shadow);
+  height: calc(25% -4px);
+  
+font-family: var(--standard-font);
+  & ul{
+  list-style: none;
+     
+  
+}
+}
+
+   & a {
+    color: var(--beige-box-color1);
+    font-family: "Poppins";
+    text-decoration: none;
+    font-weight: 500;
+
+    &:hover {
+      color: var(--pink-box-color2);
+    }
+  }
+
 
 .page-footer {
   font-size: xx-small;
@@ -449,7 +503,7 @@ border-radius: 2px;
 
 .page-footer-mail {
   & a {
-    color: var(--beige-box-color1);
+    color: var(--green-box-color5);
     font-family: "Poppins";
     text-decoration: none;
     font-weight: 500;
@@ -471,7 +525,7 @@ border-radius: 2px;
   color: var(--beige-box-color1);
   font-size: 100px;
   &:hover {
-    color: var(--pink-box-color2);
+    color: var(--blue-box-color4);
   }
   padding-top: 16px;
 }
