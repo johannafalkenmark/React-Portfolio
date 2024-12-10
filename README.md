@@ -9,7 +9,6 @@ Currently, two official plugins are available:
 
 För att sätta igång miljö
 
-i  terminal skriv
 
 npm run dev
 
