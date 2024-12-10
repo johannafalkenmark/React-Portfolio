@@ -54,6 +54,17 @@ h2 {
   font-weight: normal;
 }
 
+h3 {
+  color: var(--beige-box-color1);
+  font-family: "Poppins";
+  font-weight: normal;
+}
+
+.textarea{
+  font-family: var(--standard-font);
+  font-size: 14px;
+  font-weight: normal;
+}
 .page-header {
   background-color: var(--green-box-color5);
   color: var(--header-textcolor);
@@ -235,12 +246,73 @@ h2 {
 
 .column-D {
   background-color: var(--pink-box-color2);
+  
+}
+
+.header-menu-list.column{
+  display: flexbox;
+padding: 8px;
+font-size: 18px;
+
+  & li{
+padding: 4px;
+  }
+
+  & a{
+    margin-left: 8px;
+  }
+
+& a:hover{
+color: var(--blue-box-color4);
+
+  }
+  & i:hover{
+color: var(--blue-box-color4);
+
+  }
+
+}
+
+
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background: var(--beige-box-color1);
+  border-radius: 10px;
+  padding: 20px;
+  position: relative;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  
+}
+
+.close-popup-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
 }
 .contact-form {
 
   justify-content: space-around;
   display:block;
-  color: var(--beige-box-color1);
+ color: rgb(33, 33, 33);
   font-family: var(--standard-font);
  
 font-size: 16px;
@@ -248,7 +320,12 @@ font-size: 16px;
   box-sizing: border-box; 
   margin-top: 4px; 
   margin-bottom: 4px; 
-  resize: vertical;
+  resize:none ;
+  & h2{
+    color: rgb(33, 33, 33);
+    margin-left: 40%;
+    margin-right: auto;
+  }
 }
 
 .input-contactform{
@@ -262,14 +339,22 @@ font-size: 16px;
  
 border-color: transparent;
 border-radius: 2px;
+
+
 }
 
 .input-contactform.textarea{
   height: 80px;
 }
 
+.error {
+  color: var(--pink-box-color2);
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+
 .submit-button-contactform{
-    background-color: var(--beige-box-color1);
+    background-color: var(--green-box-color5);
   box-shadow: var(--standard-box-shadow);
   text-decoration: none;
   border-radius: 30px;
@@ -282,10 +367,12 @@ border-radius: 2px;
   font-weight: 500;
   margin-top: 8px;
   margin: 0 auto;
+  margin-left: 40%;
+    margin-right: auto;
 
   &:hover {
-    background-color: var(--green-box-color5);
-    color: var(--green-box-color1);
+    background-color: var(--pink-box-color2);
+    color: var(--pink-box-color1);
   }
   &:active {
     background-color: transparent;
@@ -296,7 +383,6 @@ border-radius: 2px;
 
 .span {
   color: var(--beige-box-color1);
-  font-size: large;
   font-weight: normal;
   font-family: "Poppins";
 }
@@ -334,12 +420,14 @@ border-radius: 2px;
   border-color: var(--blue-box-color4);
 }
 
-.grid-2 {
+.grid-3 {
   padding: 8px;
-  display: flex;
-  justify-content: space-between;
+  display:inline;
+  justify-content: space-around;
   flex-wrap: wrap;
+
 }
+
 
 .box-1 {
   background-color: var(--green-box-color5);
@@ -350,6 +438,13 @@ border-radius: 2px;
   border-width: 8px;
   box-shadow: var(--standard-box-shadow);
   height: calc(25% -4px);
+  
+font-family: var(--standard-font);
+  & ul{
+  list-style: none;
+     
+  
+}
 }
 
 .box-2 {
@@ -361,7 +456,42 @@ border-radius: 2px;
   border-width: 8px;
   box-shadow: var(--standard-box-shadow);
   height: calc(75% -4px);
+  font-family: var(--standard-font);
+
+& ul{
+  list-style: none;
+ 
 }
+}
+.box-3 {
+  background-color: var(--green-box-color5);
+  padding: 20px;
+  margin-bottom: 4px;
+  border-radius: 10px;
+  border-style: inherit;
+  border-width: 8px;
+  box-shadow: var(--standard-box-shadow);
+  height: calc(25% -4px);
+  
+font-family: var(--standard-font);
+  & ul{
+  list-style: none;
+     
+  
+}
+}
+
+   & a {
+    color: var(--beige-box-color1);
+    font-family: "Poppins";
+    text-decoration: none;
+    font-weight: 500;
+
+    &:hover {
+      color: var(--pink-box-color2);
+    }
+  }
+
 
 .page-footer {
   font-size: xx-small;
@@ -373,7 +503,7 @@ border-radius: 2px;
 
 .page-footer-mail {
   & a {
-    color: var(--beige-box-color1);
+    color: var(--green-box-color5);
     font-family: "Poppins";
     text-decoration: none;
     font-weight: 500;
@@ -395,7 +525,7 @@ border-radius: 2px;
   color: var(--beige-box-color1);
   font-size: 100px;
   &:hover {
-    color: var(--pink-box-color2);
+    color: var(--blue-box-color4);
   }
   padding-top: 16px;
 }

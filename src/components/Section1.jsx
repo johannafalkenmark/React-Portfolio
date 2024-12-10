@@ -1,122 +1,117 @@
 import { useState } from "react";
-
+//Ev istället för props { togglePopup }
 function Section1(props) {
-  const [contactForm, setContactForm] = useState({
-    email: "",
-    name: "",
-    message: "",
-  });
-
+  
   return (
-    <>
-      <div id="grid" className="grid">
-        <div className="column-3 column-A column-A-js">
-          <h2>About Me</h2>
-          {contactForm.name}
-          <p>
-            sit amet consectetur adipisicing elit. Magnam voluptatibus nam optio
-            vitae fugit ea, aliquid inventore reprehenderit repellat libero
-            culpa amet eaque explicabo <span className="span">Johanna</span>{" "}
-            molestiae qui sapiente! Enim, maxime. Quisquam. Lorem ipsum dolor
-            sit amet consectetur adipisicing elit.
-          </p>
-          <div className="spray-can-position" onClick={props.togglePartyMode}>
-            <i className="bx bx-spray-can"></i>
+    <div id="grid" className="grid">
+      <div className="column-3 column-A column-A-js">
+        <h2>About Me</h2>
+
+        <p>
+          {" "}
+          <div className="textarea">
+            I am an IT and HR Project manager who is becoming a{" "}
+            <span className="span">.Net Developer.</span> My intererst in
+            developing grew during my position as a implementation consultant of
+            a HCM system. I have a Bachelors degree in HR Psychology and have
+            worked in different areas within HR, always with a hand in IT and
+            systems. My aim is to combine all of my former and future skills.
           </div>
-        </div>
-        <div className="column-3 column-B">
-          <a
-            target="self"
-            className="primary-button"
-            href="Kontaktformulär.html"
-          >
-            Contact
-          </a>
-          <a target="self" className="primary-button" href="">
-            About Me
-          </a>
-          <a target="self" className="primary-button" href="">
-            Knowledge
-          </a>
-          <a
-            target="self"
-            className="primary-button"
-            href="https://github.com/johannafalkenmark"
-          >
-            Portfolio
-          </a>
-          <a
-            target="self"
-            className="primary-button"
-            href="Arbetslivserfarenhet Kompetens Johanna Falkenmark.pdf"
-          >
-            CV
-          </a>
-          <a target="self" className="primary-button" href="">
-            Reference (Upon Request)
-          </a>
-        </div>
+        </p>
+      </div>
+      <div className="column-3 column-B">
+        <a
+          className="primary-button"
+          href="#"
+          onClick={(e) => {
+            e.preventDefault();
+            props.togglePopup();
+          }}
+        >
+          Contact
+        </a>
+    
+        <a target="self" className="primary-button" href="#knowledge">
+          Knowledge
+        </a>
 
-        <div className="column-3 column-C">
-          <img
-            className="image"
-            src="images/613_KIL-054222.jpg"
-            alt="Bild på mig"
-          />
-        </div>
+        <a
+          target="self"
+          className="primary-button"
+          href="https://github.com/johannafalkenmark"
+        >
+          Portfolio
+        </a>
 
-        <div className="column-3 column-D">
-          <p>
-            <h2>Contact</h2>
-            <div className="contact-form">
-              <div>
-                <label for="Name">Name</label>
-              </div>
-              <input
-                className="input-contactform"
-                placeholder="Type your name..."
-                type="text"
-                value={contactForm.name}
-                onChange={(event) => {
-                  setContactForm({ ...contactForm, name: event.target.value });
-                }}
-              />
+        <a
+          target="self"
+          className="primary-button"
+          href="Arbetslivserfarenhet Kompetens Johanna Falkenmark.pdf"
+        >
+          CV
+        </a>
+        <a target="self" className="primary-button" href="#reference">
+          Reference
+        </a>
+      </div>
 
-              <div>
-                <label for="Email">Email</label>
-              </div>
-              <input
-                className="input-contactform"
-                placeholder="Type your email..."
-                type="text"
-                value={contactForm.email}
-                onChange={(event) => {
-                  setContactForm({ ...contactForm, email: event.target.value });
-                }}
-              />
+      <div className="column-3 column-C">
+        <img
+          className="image"
+          src="images/613_KIL-054222.jpg"
+          alt="Bild på mig"
+        />
+      </div>
 
-              <div>
-                <label for="Message">Message</label>
-              </div>
-              <textarea
-                className="input-contactform textarea"
-                placeholder="Message..."
-                type="text"
-                value={contactForm.message}
-                onChange={(event) => {
-                  setContactForm({
-                    ...contactForm,
-                    message: event.target.value,
-                  });
-                }}
-              />
-              <button className="submit-button-contactform">Submit</button>
-            </div>
-          </p>
+      <div className="column-3 column-D">
+        <ul className="header-menu-list column">
+          <li>
+            <i className="header-icon bx bx-envelope">
+              {" "}
+              <a href="mailto:johannafalkenmark@gmail.com?subject=Contact">
+                Email Me
+              </a>
+            </i>
+          </li>
+
+          <li>
+            <i className="header-icon bx bxl-linkedin">
+              <a
+                target="self"
+                href="https://www.linkedin.com/in/johanna-falkenmark-0425a61b/"
+              >
+                Linkedin
+              </a>
+            </i>
+          </li>
+
+          <li>
+            <i className="header-icon bx bxl-github">
+              <a target="self" href="https://github.com/johannafalkenmark">
+                GitHub
+              </a>
+            </i>
+          </li>
+
+          <li>
+            <i className="header-icon bx bx-chevrons-down">
+              <a
+                href="Arbetslivserfarenhet Kompetens Johanna Falkenmark.pdf"
+                download="JFCV"
+              >
+                Download CV
+              </a>
+            </i>
+          </li>
+        </ul>
+
+        
+
+        <div className="spray-can-position" onClick={props.togglePartyMode}>
+          <i className="bx bx-spray-can"></i>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 export default Section1;
- 
