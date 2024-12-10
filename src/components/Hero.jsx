@@ -1,16 +1,16 @@
 import { useState } from "react";
-
-function Hero(props) {
+/*ev ändra props till {toggle Popup}*/
+function Hero(props) { 
   return (
-    <>
+    
       <section className="hero">
         <div className="hero-image">
           <div className="hero-text">
             <h1>Johanna Falkenmark</h1>
-            <p></p>
+            
             <button
               className="hero-button"
-              href="#"
+              
               onClick={(e) => {
                 e.preventDefault();
                 props.togglePopup();
@@ -32,7 +32,7 @@ function Hero(props) {
           </div>
         </div>
       </section>
-    </>
+    
   );
 }
 export default Hero;

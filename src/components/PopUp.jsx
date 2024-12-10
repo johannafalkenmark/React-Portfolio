@@ -1,7 +1,8 @@
-// Lägg kontakt formulär i den här komponenten. bara en rad
+
+import ContactForm from "./components/ContactForm";
 
 const PopUp = () => {
-  return <div></div>;
+  return <ContactForm />
 };
 
 export default PopUp;

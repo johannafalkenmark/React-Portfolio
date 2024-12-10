@@ -9,29 +9,48 @@ import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Section1 from "./components/Section1";
 import Section2 from "./components/Section2";
+
+import ContactForm from "./components/Contactform";
 import Footer from "./components/Footer";
 
 function App() {
-  /* PARTY MODE*/
+
   const [partyMode, togglePartyMode] = useState(false);
-  //lägg pop up state här istället
-  //och pop funktion
+const [isPopupVisible, setIsPopupVisible] = useState(false);
+
   const _togglePartyMode = () => {
     togglePartyMode(!partyMode);
   };
+  
+  const togglePopup = () => {
+    setIsPopupVisible(!isPopupVisible);
+  };
+
 
   return (
     <div className={`${partyMode ? "container container-party" : "container"}`}>
-      <Header partyMode={partyMode} />
+      <Header partyMode={partyMode} togglePopup={togglePopup} />
       <main className="page-content">
-        {/* lägg in här att hero etc kan kalla på den pop up funktionen som nedan party*/}
-        <Hero />
-        <Section1 togglePartyMode={_togglePartyMode} />
+        <Hero togglePopup={togglePopup} />
+        <Section1
+          togglePartyMode={_togglePartyMode}
+          togglePopup={togglePopup}
+        />
         <Section2 />
       </main>
       <Footer></Footer>
-
-      {/* lägg in pop upp komponent. Det enda din pop up behöver är om statet popIsVisible är true eller false för att avgöra om den ska visas eller inte */}
+      {isPopupVisible && ( 
+        <div className="popup-overlay" onClick={togglePopup}>
+          <div className="popup-content" onClick={(e) => e.stopPropagation()}> 
+            <button className="close-popup-button" onClick={togglePopup}>
+              ×
+              </button>
+        
+        <ContactForm onClose={togglePopup} /> 
+        </div>
+        </div>
+      )}
+      
     </div>
   );
 }

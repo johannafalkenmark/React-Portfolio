@@ -54,6 +54,17 @@ h2 {
   font-weight: normal;
 }
 
+h3 {
+  color: var(--beige-box-color1);
+  font-family: "Poppins";
+  font-weight: normal;
+}
+
+.textarea{
+  font-family: var(--standard-font);
+  font-size: 14px;
+  font-weight: normal;
+}
 .page-header {
   background-color: var(--green-box-color5);
   color: var(--header-textcolor);
@@ -235,8 +246,23 @@ h2 {
 
 .column-D {
   background-color: var(--pink-box-color2);
+  
 }
 
+.links-section1{
+   
+  
+  & a {
+    text-decoration: none;
+  }
+}
+
+.linkedin-me{
+   & a {
+    text-decoration: none;
+  }
+  text-decoration: none;
+}
 
 .popup-overlay {
   position: fixed;

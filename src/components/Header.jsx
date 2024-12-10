@@ -62,7 +62,7 @@ function Header(props) {
                   href="#"
                   onClick={(e) => {
                     e.preventDefault();
-                    togglePopup();
+                    props.togglePopup();
                   }}
                 >
                   Contact
