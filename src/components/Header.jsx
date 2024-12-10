@@ -3,7 +3,9 @@ function Header(props) {
   return (
     <>
       <header
-        className={`${props.partyMode ? "page-header page-header-party" : "page-header"}`}
+        className={`${
+          props.partyMode ? "page-header page-header-party" : "page-header"
+        }`}
       >
         <h1>Johanna Falkenmark</h1>
         <div className="icons-on-header">
@@ -56,7 +58,15 @@ function Header(props) {
                 <a href="">Experience</a>
               </li>
               <li>
-                <a href="">Contact</a>
+                <a
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    togglePopup();
+                  }}
+                >
+                  Contact
+                </a>
               </li>
             </ul>
           </nav>

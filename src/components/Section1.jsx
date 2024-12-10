@@ -2,6 +2,7 @@ import { useState } from "react";
 
 function Section1(props) {
   /*POP UP:*/
+
   const [isPopupVisible, setIsPopupVisible] = useState(false);
 
   const togglePopup = () => {
@@ -212,4 +213,3 @@ function Section1(props) {
   );
 }
 export default Section1;
- 

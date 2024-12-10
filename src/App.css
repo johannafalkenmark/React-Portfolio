@@ -330,6 +330,8 @@ border-radius: 2px;
   font-weight: 500;
   margin-top: 8px;
   margin: 0 auto;
+  margin-left: 40%;
+    margin-right: auto;
 
   &:hover {
     background-color: var(--green-box-color5);

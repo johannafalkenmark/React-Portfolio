@@ -1,7 +1,6 @@
 import { useState } from "react";
 
-function Hero() {
-  
+function Hero(props) {
   return (
     <>
       <section className="hero">
@@ -14,7 +13,7 @@ function Hero() {
               href="#"
               onClick={(e) => {
                 e.preventDefault();
-                togglePopup();
+                props.togglePopup();
               }}
             >
               Contact
