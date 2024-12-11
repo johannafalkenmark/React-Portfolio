@@ -1,4 +1,3 @@
-
 function Section1({ togglePopup, togglePartyMode }) {
   return (
     <div id="grid" className="grid">
@@ -6,7 +5,6 @@ function Section1({ togglePopup, togglePartyMode }) {
         <h2>About Me</h2>
 
         <p>
-          {" "}
           <div className="textarea">
             I am an IT and HR Project manager who is becoming a{" "}
             <span className="span">.Net Developer</span>. My intererst in
@@ -64,7 +62,6 @@ function Section1({ togglePopup, togglePartyMode }) {
         <ul className="header-menu-list column">
           <li>
             <i className="header-icon bx bx-envelope">
-              {" "}
               <a href="mailto:johannafalkenmark@gmail.com?subject=Contact">
                 Email Me
               </a>
