@@ -1,10 +1,9 @@
-function Header(props) {
-  console.log(props.partyMode)
+function Header({ partyMode, togglePopup }) {
   return (
     <>
       <header
         className={`${
-          props.partyMode ? "page-header page-header-party" : "page-header"
+          partyMode ? "page-header page-header-party" : "page-header"
         }`}
       >
         <h1>Johanna Falkenmark</h1>
@@ -35,7 +34,7 @@ function Header(props) {
 
         <menu className="navigation-menu">
           <input type="checkbox" id="check" className="hamburger-checkbox" />
-          <label for="check" classNam="checkbtn">
+          <label for="check" className="checkbtn">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="hamburger-svg"
@@ -58,15 +57,14 @@ function Header(props) {
                 <a href="#experience">Experience</a>
               </li>
               <li>
-                <a
-                  href="#"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    props.togglePopup();
+                <span
+                  role="button"
+                  onClick={() => {
+                    togglePopup();
                   }}
                 >
                   Contact
-                </a>
+                </span>
               </li>
             </ul>
           </nav>
