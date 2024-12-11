@@ -1,7 +1,6 @@
 import { useState } from "react";
 
-function ContactForm( {onClose} ) {
-  
+function ContactForm({ onClose }) {
   const [contactForm, setContactForm] = useState({
     email: "",
     name: "",
@@ -44,7 +43,9 @@ function ContactForm( {onClose} ) {
     if (Object.keys(validationErrors).length === 0) {
       setSubmitting(true);
       setTimeout(() => {
-        alert("Thank you for your message");
+        alert(
+          "Contactform is a prop - please email instead"
+        );
         setSubmitting(false);
         setContactForm({ email: "", name: "", message: "" });
         onClose();
@@ -54,73 +55,69 @@ function ContactForm( {onClose} ) {
     }
   };
 
-return (
-                <form
-                  className="contact-form"
-                  onSubmit={handleSubmit}
-                  noValidate
-                >
-                  <h2>Contact</h2>
-                  <div>
-                    <label htmlFor="Name">Name</label>
-                  </div>
-                  <input
-                    className="input-contactform"
-                    placeholder="Type your name..."
-                    type="text"
-                    value={contactForm.name}
-                    onChange={(event) =>
-                      setContactForm({
-                        ...contactForm,
-                        name: event.target.value,
-                      })
-                    }
-                  />
-                  {errors.name && <p className="error">{errors.name}</p>}
+  return (
+    <form className="contact-form" onSubmit={handleSubmit} noValidate>
+      <h2>Contact</h2>
+      <div>
+        <label htmlFor="Name">Name</label>
+      </div>
+      <input
+        className="input-contactform"
+        placeholder="Type your name..."
+        type="text"
+        value={contactForm.name}
+        onChange={(event) =>
+          setContactForm({
+            ...contactForm,
+            name: event.target.value,
+          })
+        }
+      />
+      {errors.name && <p className="error">{errors.name}</p>}
 
-                  <div>
-                    <label htmlFor="Email">Email</label>
-                  </div>
-                  <input
-                    className="input-contactform"
-                    placeholder="Type your email..."
-                    type="text"
-                    value={contactForm.email}
-                    onChange={(event) =>
-                      setContactForm({
-                        ...contactForm,
-                        email: event.target.value,
-                      })
-                    }
-                  />
-                  {errors.email && <p className="error">{errors.email}</p>}
+      <div>
+        <label htmlFor="Email">Email</label>
+      </div>
+      <input
+        className="input-contactform"
+        placeholder="Type your email..."
+        type="text"
+        value={contactForm.email}
+        onChange={(event) =>
+          setContactForm({
+            ...contactForm,
+            email: event.target.value,
+          })
+        }
+      />
+      {errors.email && <p className="error">{errors.email}</p>}
 
-                  <div>
-                    <label htmlFor="Message">Message</label>
-                  </div>
-                  <textarea
-                    className="input-contactform textarea"
-                    placeholder="Message..."
-                    value={contactForm.message}
-                    onChange={(event) =>
-                      setContactForm({
-                        ...contactForm,
-                        message: event.target.value,
-                      })
-                    }
-                  />
+      <div>
+        <label htmlFor="Message">Message</label>
+      </div>
+      <textarea
+        className="input-contactform textarea"
+        placeholder="Message..."
+        value={contactForm.message}
+        onChange={(event) =>
+          setContactForm({
+            ...contactForm,
+            message: event.target.value,
+          })
+        }
+      />
 
-                  {errors.message && <p className="error">{errors.message}</p>}
+      {errors.message && <p className="error">{errors.message}</p>}
 
-                  <button
-                    type="submit"
-                    className="submit-button-contactform"
-                    disabled={submitting}
-                  >
-                    {submitting ? "Submitting..." : "Submit"}
-                  </button>
-                </form> 
-                );
-            }
+      <button
+        type="submit"
+        className="submit-button-contactform"
+        disabled={submitting}
+      >
+        {submitting ? "Submitting..." : "Submit"}
+      </button>
+    </form>
+  );
+}
 
 export default ContactForm;

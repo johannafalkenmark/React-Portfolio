@@ -1,7 +1,5 @@
-import { useState } from "react";
-//Ev istället för props { togglePopup }
-function Section1(props) {
-  
+
+function Section1({ togglePopup, togglePartyMode }) {
   return (
     <div id="grid" className="grid">
       <div className="column-3 column-A column-A-js">
@@ -11,7 +9,7 @@ function Section1(props) {
           {" "}
           <div className="textarea">
             I am an IT and HR Project manager who is becoming a{" "}
-            <span className="span">.Net Developer.</span> My intererst in
+            <span className="span">.Net Developer</span>. My intererst in
             developing grew during my position as a implementation consultant of
             a HCM system. I have a Bachelors degree in HR Psychology and have
             worked in different areas within HR, always with a hand in IT and
@@ -20,17 +18,16 @@ function Section1(props) {
         </p>
       </div>
       <div className="column-3 column-B">
-        <a
+        <span
           className="primary-button"
-          href="#"
-          onClick={(e) => {
-            e.preventDefault();
-            props.togglePopup();
+          role="button"
+          onClick={() => {
+            togglePopup();
           }}
         >
           Contact
-        </a>
-    
+        </span>
+
         <a target="self" className="primary-button" href="#knowledge">
           Knowledge
         </a>
@@ -105,9 +102,11 @@ function Section1(props) {
           </li>
         </ul>
 
-        
-
-        <div className="spray-can-position" onClick={props.togglePartyMode}>
+        <div
+          className="spray-can-position"
+          role="button"
+          onClick={togglePartyMode}
+        >
           <i className="bx bx-spray-can"></i>
         </div>
       </div>

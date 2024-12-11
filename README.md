@@ -8,7 +8,7 @@ Design
 
 Picture of forest was chosen to give a calming atmosphere. It was picked from https://unsplash.com/.
 Fonts from https://fonts.google.com/.
-Icons from https://boxicons.com/ and svg-icons from https://fonts.google.com/icons. 
+Icons from https://boxicons.com/ and svg-icons from https://fonts.google.com/icons.
 
 Technologies Used
 React: For building the interactive user interface.

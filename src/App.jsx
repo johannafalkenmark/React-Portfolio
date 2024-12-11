@@ -14,18 +14,16 @@ import ContactForm from "./components/Contactform";
 import Footer from "./components/Footer";
 
 function App() {
-
   const [partyMode, togglePartyMode] = useState(false);
-const [isPopupVisible, setIsPopupVisible] = useState(false);
+  const [isPopupVisible, setIsPopupVisible] = useState(false);
 
   const _togglePartyMode = () => {
     togglePartyMode(!partyMode);
   };
-  
+
   const togglePopup = () => {
     setIsPopupVisible(!isPopupVisible);
   };
-
 
   return (
     <div className={`${partyMode ? "container container-party" : "container"}`}>
@@ -39,18 +37,17 @@ const [isPopupVisible, setIsPopupVisible] = useState(false);
         <Section2 />
       </main>
       <Footer></Footer>
-      {isPopupVisible && ( 
+      {isPopupVisible && (
         <div className="popup-overlay" onClick={togglePopup}>
-          <div className="popup-content" onClick={(e) => e.stopPropagation()}> 
+          <div className="popup-content" onClick={(e) => e.stopPropagation()}>
             <button className="close-popup-button" onClick={togglePopup}>
               ×
-              </button>
-        
-        <ContactForm onClose={togglePopup} /> 
-        </div>
+            </button>
+
+            <ContactForm onClose={togglePopup} />
+          </div>
         </div>
       )}
-      
     </div>
   );
 }
