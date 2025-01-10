@@ -1,3 +1,5 @@
+import imageOfMe from "../images/613_KIL-054222.jpg"
+
 function Section1({ togglePopup, togglePartyMode }) {
   return (
     <div id="grid" className="grid">
@@ -51,11 +53,7 @@ function Section1({ togglePopup, togglePartyMode }) {
       </div>
 
       <div className="column-3 column-C">
-        <img
-          className="image"
-          src="images/613_KIL-054222.jpg"
-          alt="Bild på mig"
-        />
+        <img className="image" src={imageOfMe} alt="Bild på mig" />
       </div>
 
       <div className="column-3 column-D">
