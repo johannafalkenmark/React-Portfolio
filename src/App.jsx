@@ -10,7 +10,7 @@ import Hero from "./components/Hero";
 import Section1 from "./components/Section1";
 import Section2 from "./components/Section2";
 
-import ContactForm from "./components/Contactform";
+import ContactForm from "./components/ContactForm";
 import Footer from "./components/Footer";
 
 function App() {
