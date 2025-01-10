@@ -1,4 +1,5 @@
 import { useState } from "react";
+// Test
 
 function ContactForm({ onClose }) {
   const [contactForm, setContactForm] = useState({
@@ -43,9 +44,7 @@ function ContactForm({ onClose }) {
     if (Object.keys(validationErrors).length === 0) {
       setSubmitting(true);
       setTimeout(() => {
-        alert(
-          "Contactform is a prop - please email instead"
-        );
+        alert("Contactform is a prop - please email instead");
         setSubmitting(false);
         setContactForm({ email: "", name: "", message: "" });
         onClose();
